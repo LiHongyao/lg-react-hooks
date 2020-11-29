@@ -1,11 +1,13 @@
 import { useCallback, useRef, useEffect } from 'react';
 
+
+type FunctionType = <T>(...args: T[]) => void;
 interface IRefs {
-  fn: () => void;
+  fn: FunctionType;
   timer: any;
 }
 
-function useDebounce(fn: () => void, delay: number, deps: any[] = []) {
+function useDebounce(fn: FunctionType, delay: number, deps: any[] = []) {
   const { current } = useRef<IRefs>({ fn, timer: null });
 
   useEffect(() => {
@@ -18,12 +20,14 @@ function useDebounce(fn: () => void, delay: number, deps: any[] = []) {
         clearTimeout(current.timer);
       }
       current.timer = setTimeout(() => {
-        // @ts-ignore
+       
         current.fn.call(null, ...args);
       }, delay);
     },
     [deps],
   );
 }
+
+Function
 
 export default useDebounce;
