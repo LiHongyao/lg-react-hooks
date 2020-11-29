@@ -1,6 +1,6 @@
 {
   "name": "lg-react-hooks",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React 常用自定义Hooks",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
