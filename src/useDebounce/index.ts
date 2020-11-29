@@ -1,7 +1,7 @@
 import { useCallback, useRef, useEffect } from 'react';
 
 
-type FunctionType = <T>(...args: T[]) => void;
+type FunctionType = (...args: any[]) => void;
 interface IRefs {
   fn: FunctionType;
   timer: any;
@@ -30,3 +30,4 @@ function useDebounce(fn: FunctionType, delay: number, deps: any[] = []) {
 
 
 export default useDebounce;
+
