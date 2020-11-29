@@ -28,6 +28,5 @@ function useDebounce(fn: FunctionType, delay: number, deps: any[] = []) {
   );
 }
 
-Function
 
 export default useDebounce;
