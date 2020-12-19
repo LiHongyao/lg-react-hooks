@@ -11,7 +11,7 @@ function useTitle(title: string) {
       i.onload =  () => {
         setTimeout(() => {
           i.remove();
-        }, 0);
+        }, 200);
       };
       document.body.appendChild(i);
     }
